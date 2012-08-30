@@ -2,15 +2,15 @@
 
 namespace Music;
 
-include "lib/config.php";
+include_once "lib/config.php";
 if (isset($_REQUEST['user'])) {
     $admin = new \Admin($db);
 
-    if (checkLogin($_POST) == true) {
+    if ($admin->checkLogin($_POST) == true) {
         $_SESSION['user'] = $_POST['user'];
         $_SESSION['pass'] = $_POST['pass'];
 
-        header('Location: index.php');
+        header('Location: ../admin');
     } else {
         $failure = true;
     }
@@ -23,7 +23,7 @@ if (isset($_REQUEST['user'])) {
         <title><?php print $title ?>: Admin</title>
     </head>
     <body>
-        <form action="login.php" method="POST">
+        <form action="login" method="POST">
             <fieldset>
                 <legend>Login</legend>
                 Username: <input name="user" type="text" size="30" />

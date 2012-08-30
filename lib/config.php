@@ -1,5 +1,8 @@
 <?php
 namespace Music;
+session_set_cookie_params(18000);
+session_start();
+
 define("_INCLUDE_PATH_", "C:\\\\xampp\htdocs\Music\classes\\");
 define("_SITE_URL_", "http://home.jjhosting.org/Music");
 

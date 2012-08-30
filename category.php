@@ -1,12 +1,14 @@
 <?php
+
 namespace Music;
-include "lib/config.php";
+
+include_once "lib/config.php";
 $main = new \Main($db);
 $category = new \Category($db, $_GET['categoryid']);
 $perPage = $_GET['perpage'];
 $page = $_GET['page'];
 $sort = $_GET['sort'];
-if(empty($perPage) or !is_numeric($perPAge)) {
+if (empty($perPage) or !is_numeric($perPAge)) {
     $perPage = 25;
 }
 ?>
@@ -14,9 +16,9 @@ if(empty($perPage) or !is_numeric($perPAge)) {
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><?php print $main->getSiteName(). ": ". $category->getName() ?></title>
+        <title><?php print $main->getSiteName() . ": " . $category->getName() ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <?php echo $main->getStyles() ?>
+<?php echo $main->getStyles() ?>
     </head>
     <body>
         <div id="wrap">

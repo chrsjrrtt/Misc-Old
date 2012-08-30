@@ -11,7 +11,7 @@ $main = new \Main($db);
     <head>
         <title><?php print $main->getSiteName() ?>: Home</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?php echo $main->getStyles() ?>
+        <?php echo $main->getStyles() ?>
     </head>
     <body>
         <div id="wrap">
