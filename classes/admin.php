@@ -22,6 +22,21 @@ class Admin {
         }
         return false;
     }
+    
+    public function getNavbar() {
+        $query = "SELECT * FROM `admin_menu` ORDER BY `priority` ASC;";
+        $result = mysql_query($query, $this->db);
+        $navbar = "";
+        $count = 0;
+        while($current = mysql_fetch_assoc($result)) {
+            if($count > 0 && $count %4 == 0) {
+                $navbar .= "<br /><br /><br />";
+            }
+            $navbar .= "<div class='navcontainer'><a href='admin/". $current['link']. "'><div class='navitem'>". $current['name']. "</div></a></div>";
+            $count++;
+        }
+        return $navbar;
+    }
 
 }
 

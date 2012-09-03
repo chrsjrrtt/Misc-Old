@@ -23,7 +23,7 @@ if (isset($_REQUEST['user'])) {
         <title><?php print $title ?>: Admin</title>
     </head>
     <body>
-        <form action="login" method="POST">
+        <form action="../login" method="POST">
             <fieldset>
                 <legend>Login</legend>
                 Username: <input name="user" type="text" size="30" />

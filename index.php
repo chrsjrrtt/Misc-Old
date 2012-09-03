@@ -33,7 +33,7 @@ $main = new \Main($db);
 
             </div>
             <div id="footer">
-
+                <?php print $main->getFooter(); ?>
             </div>
         </div>
     </body>

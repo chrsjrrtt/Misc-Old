@@ -42,5 +42,9 @@ class Main {
         }
         return $navbar;
     }
+    
+    public function getFooter() {
+        return;
+    }
 }
 ?>
